@@ -31,24 +31,6 @@ export async function fetchTabStash<T>(
   return res.json() as Promise<T>;
 }
 
-export function searchLinks(q: string, limit = 20) {
-  const params = new URLSearchParams({
-    q,
-    format: "compact",
-    limit: String(limit),
-  });
-  return fetchTabStash<{ items: import("./types").CompactLinkItem[] }>(
-    `/v1/search?${params}`,
-  );
-}
-
-export function getRecentLinks(limit = 50, sort = "newest") {
-  const params = new URLSearchParams({ limit: String(limit), sort });
-  return fetchTabStash<import("./types").RecentResponse>(
-    `/v1/recent?${params}`,
-  );
-}
-
 export function captureLink(url: string, title?: string) {
   return fetchTabStash<import("./types").LinkItem>("/v1/capture", {
     method: "POST",

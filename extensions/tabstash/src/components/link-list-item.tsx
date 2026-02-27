@@ -8,6 +8,7 @@ interface LinkListItemProps {
   hostname: string;
   created_at?: string;
   tags?: string[];
+  searchText?: string;
 }
 
 // Raycast extensions bundle independently (not part of the npm workspace),
@@ -37,13 +38,17 @@ export function LinkListItem({
   hostname,
   created_at,
   tags,
+  searchText,
 }: LinkListItemProps) {
   const accessories: List.Item.Accessory[] = [
     { text: hostname, icon: Icon.Globe },
   ];
 
   if (tags && tags.length > 0) {
-    accessories.unshift({ tag: tags[0] });
+    const query = searchText?.toLowerCase() ?? "";
+    const displayTag =
+      (query && tags.find((t) => t.toLowerCase().includes(query))) || tags[0];
+    accessories.unshift({ tag: displayTag });
   }
 
   if (created_at) {
@@ -59,6 +64,12 @@ export function LinkListItem({
       actions={
         <ActionPanel>
           <Action.OpenInBrowser url={url} />
+          <Action.OpenInBrowser
+            title="Open in TabStash"
+            icon={Icon.Book}
+            url={`https://tabsta.sh/item/${id}`}
+            shortcut={{ modifiers: ["cmd"], key: "o" }}
+          />
           <Action.CopyToClipboard
             title="Copy URL"
             content={url}
