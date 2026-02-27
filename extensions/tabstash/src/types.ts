@@ -1,10 +1,3 @@
-export interface CompactLinkItem {
-  id: string;
-  title: string;
-  url: string;
-  hostname: string;
-}
-
 export interface LinkItem {
   id: string;
   url: string;
@@ -24,11 +17,17 @@ export interface LinkItem {
   folder_name: string | null;
 }
 
-export interface CompactSearchResponse {
-  items: CompactLinkItem[];
+export interface SearchResponse {
+  items: LinkItem[];
 }
 
 export interface RecentResponse {
   items: LinkItem[];
   cursor: string | null;
+}
+
+export interface MeResponse {
+  sub: string;
+  email?: string;
+  ai_enabled?: boolean;
 }

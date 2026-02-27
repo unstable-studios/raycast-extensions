@@ -25,11 +25,12 @@
     {
       "name": "search-links",
       "title": "Search Bookmarks",
-      "description": "Search your TabStash bookmarks",
+      "description": "Search and browse your TabStash bookmarks",
       "mode": "view",
       "keywords": [
         "tabstash",
         "search",
+        "recent",
         "links",
         "bookmarks"
       ],
@@ -40,18 +41,6 @@
           "type": "text",
           "required": false
         }
-      ]
-    },
-    {
-      "name": "recent-links",
-      "title": "View Recent Bookmarks",
-      "description": "Browse your recently saved bookmarks in TabStash",
-      "mode": "view",
-      "keywords": [
-        "tabstash",
-        "recent",
-        "links",
-        "bookmarks"
       ]
     },
     {
