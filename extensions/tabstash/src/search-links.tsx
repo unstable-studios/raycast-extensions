@@ -5,7 +5,12 @@ import { LinkListItem } from "./components/link-list-item";
 import { provider } from "./provider";
 import type { MeResponse, RecentResponse, SearchResponse } from "./types";
 
-type SortOrder = "newest" | "oldest" | "last-visited" | "alpha-asc" | "alpha-desc";
+type SortOrder =
+  | "newest"
+  | "oldest"
+  | "last-visited"
+  | "alpha-asc"
+  | "alpha-desc";
 
 const SORT_OPTIONS: { label: string; value: SortOrder }[] = [
   { label: "Newest", value: "newest" },
