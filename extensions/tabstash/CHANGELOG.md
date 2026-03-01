@@ -1,14 +1,7 @@
 # TabStash Raycast Extension Changelog
 
-## [Rich search and improved docs] - 2026-02-21
+## [Initial release] - {PR_MERGE_DATE}
 
-- Added rich search with metadata display (domain, tags, folder) and detail panel
-- Added in-app Raycast setup docs and feedback improvements
-- Fixed extension build issues
-
-## [Initial release] - 2026-02-21
-
-- Search Bookmarks command with full-text search
-- View Recent Bookmarks command with paginated browsing
+- Search Bookmarks command with full-text search, metadata display, and detail panel
 - Capture Current Tab command to save active browser tab
 - Auth0 PKCE authentication via Raycast OAuth
